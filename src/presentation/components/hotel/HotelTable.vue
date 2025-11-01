@@ -26,7 +26,7 @@
     <template #bodyCell="{ column, record }">
       <template v-if="column.key === 'logo'">
         <Avatar
-          :src="record.logo"
+          :src="record.logo ? 'https://laylaos-production.up.railway.app' + record.logo : ''"
           :alt="record.name"
           class="w-12 h-12 object-cover rounded-full"
         />
