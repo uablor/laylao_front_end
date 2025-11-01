@@ -123,7 +123,7 @@
             <img
               v-if="formState.logo"
               class="w-full h-full object-cover"
-              :src="'http://localhost:3000' + formState.logo"
+              :src="'https://laylaos-production.up.railway.app' + formState.logo"
               alt="avatar"
             />
             <div v-else>
@@ -266,7 +266,7 @@ const uploadImage = async (options: any) => {
     const formData = new FormData();
     formData.append("file", file);
     const response = await axios.post(
-      "http://localhost:3000/api/hotels/upload-images",
+      "https://laylaos-production.up.railway.app/api/hotels/upload-images",
       formData,
       {
         headers: {
