@@ -233,7 +233,18 @@ const onSubmit = async () => {
   }
 
   await formRef.value.validate();
-
+  // const dateOnly = new Date(formState.value.checkin_date).toISOString().slice(0, 10);
+  booking.value.rooms = booking.value.rooms.map((room : any) => {
+    return {
+      ...room,
+      checkin_date: room.checkin_date
+        ? new Date(room.checkin_date).toISOString().slice(0, 10)
+        : null,
+      checkout_date: room.checkout_date
+        ? new Date(room.checkout_date).toISOString().slice(0, 10)
+        : null,
+    };
+  });
   await CreateBooking();
   onClose();
 };
