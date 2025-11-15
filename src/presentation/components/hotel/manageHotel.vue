@@ -27,7 +27,7 @@
                   @remove="onRemove"
                 >
                   <div v-if="!logoFile.length">
-                    <LoadingOutlined v-if="loading_image" />
+                    <LoadingOutlined v-if="loading_one" />
                     <PlusOutlined v-else />
                     <div class="ant-upload-text">ອັບໂຫຼດໂລໂກ້</div>
                   </div>
@@ -49,7 +49,7 @@
                   :custom-request="customRequest"
                 >
                   <div>
-                    <LoadingOutlined v-if="loading_one" />
+                    <LoadingOutlined v-if="loading_image" />
                     <PlusOutlined v-else />
                     <div class="ant-upload-text">ອັບໂຫຼດຮູບ</div>
                   </div>
